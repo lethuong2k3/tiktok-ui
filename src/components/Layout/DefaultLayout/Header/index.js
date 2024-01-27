@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { Wrapper as PopperWrapper } from '~/components/Popper'; 
 import styles from './HeaderModules.module.scss'
 import images from '~/assets/images';
+import AccountItem from '~/components/AccountItem';
 
 
 const cx = classNames.bind(styles);
@@ -27,8 +28,9 @@ function Header() {
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                             <PopperWrapper>                       
                                 <h4 className={cx('search-title')}>
-                                    Bạn có thể thích
+                                    Accounts
                                 </h4>
+                                <AccountItem />
                             </PopperWrapper>
                         </div>
                 )}
