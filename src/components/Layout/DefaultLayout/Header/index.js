@@ -2,8 +2,9 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
+import { Wrapper as PopperWrapper } from '~/components/Popper'; 
 import styles from './HeaderModules.module.scss'
 import images from '~/assets/images';
 
@@ -12,6 +13,9 @@ const cx = classNames.bind(styles);
 
 function Header() {
     const [searchResult, setSearchResult] = useState([])
+    useEffect(() => {
+        setSearchResult('1')
+    }, [])
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -21,7 +25,11 @@ function Header() {
                     visible={searchResult.length > 0}
                     render={attrs => (
                         <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            Kết quả
+                            <PopperWrapper>                       
+                                <h4 className={cx('search-title')}>
+                                    Bạn có thể thích
+                                </h4>
+                            </PopperWrapper>
                         </div>
                 )}
                 >        
