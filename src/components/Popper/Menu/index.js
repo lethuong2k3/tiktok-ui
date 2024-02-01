@@ -29,7 +29,7 @@ function Menu({ children, items = []}) {
       interactive
       placement="bottom-end"
       delay={[0, 700]}
-      offset={[12, 8]}
+      offset={[6, 8]}
       render={(attrs) => (
         <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
           <PopperWrapper className={cx('menu-poper')}>
