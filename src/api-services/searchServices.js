@@ -2,7 +2,7 @@ import * as request from '~/untils/request';
 
 export const Search = async (q, type = 'less') => {
     try {
-      const res = request.get(`users/search`, {
+      const res = await request.get(`users/search`, {
         params: {
           q,
           type
