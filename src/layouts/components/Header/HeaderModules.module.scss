@@ -16,6 +16,10 @@
     width: 100%;
 }
 
+.logo-home {
+    width: 300px;
+}
+
 .inner {
     height: 100%;
     width: var(--default-layout-width, 1150px);
@@ -74,3 +78,5 @@
     margin-left: 24px;
     cursor: pointer;
 }
+
+

@@ -54,11 +54,12 @@ function Search() {
     <div>
       <HeadlessTippy
         interactive
+        
         appendTo={() => document.body}
         visible={showResult && searchResult.length > 0}
         render={(attrs) => (
           <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-            <PopperWrapper>
+            <PopperWrapper onClick={handlesHideResult}>
               <h4 className={cx('search-title')}>Accounts</h4>
               {<SearchResult searchResult={searchResult} />}
             </PopperWrapper>

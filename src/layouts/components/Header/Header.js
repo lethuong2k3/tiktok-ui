@@ -1,16 +1,6 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCircleQuestion,
-  faCoins,
-  faEllipsisVertical,
-  faGear,
-  faKeyboard,
-  faLanguage,
-  faPlus,
-  faSignOut,
-  faUser,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCoins, faEllipsisVertical, faGear, faPlus, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
@@ -19,16 +9,27 @@ import Button from '~/components/Button';
 import styles from './HeaderModules.module.scss';
 import images from '~/assets/images';
 import Menu from '~/components/Popper/Menu';
-import { InboxIcon, MessageIcon } from '~/components/Icons';
+import {
+  InboxIcon,
+  MessageIcon,
+  LiveCreatorHubIcon,
+  EnglishIcon,
+  FeedbackIcon,
+  KeyboardIcon,
+} from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
-import config from '~/config'
-
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
   {
-    icon: <FontAwesomeIcon icon={faLanguage} />,
+    icon: <LiveCreatorHubIcon />,
+    title: 'LIVE Creator Hub',
+    href: 'https://www.tiktok.com/live/creators',
+  },
+  {
+    icon: <EnglishIcon />,
     title: 'English',
     children: {
       title: 'Language',
@@ -45,12 +46,12 @@ const MENU_ITEMS = [
     },
   },
   {
-    icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+    icon: <FeedbackIcon />,
     title: 'Feedback and help',
     to: '/feedback',
   },
   {
-    icon: <FontAwesomeIcon icon={faKeyboard} />,
+    icon: <KeyboardIcon />,
     title: 'Keyboard shortcuts',
   },
 ];
@@ -86,7 +87,9 @@ function Header() {
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
         <Link to={config.routes.home} className={cx('logo-link')}>
-          <img src={images.logo} alt="Tiktok" />
+          <div className={cx('logo-home')}>
+            <img src={images.logo} alt="Tiktok" />
+          </div>
         </Link>
 
         <Search />
@@ -111,7 +114,9 @@ function Header() {
             </>
           ) : (
             <>
-              <Button text>Upload</Button>
+              <Button outlineDefault leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                Upload
+              </Button>
               <Button primary>Log in</Button>
             </>
           )}
