@@ -1,5 +1,16 @@
 .wrapper {
-    width: 356px;
+    overflow-y: hidden;
+    scrollbar-gutter: stable both-edges;
+    &:hover {
+        overflow-y: overlay;
+    }
+}
+
+.container {
+    width: 232px;
+    max-height: 660px;
+    display: flex;
+    flex-direction: column;
     padding: 20px 0 26px 8px;
 }
 

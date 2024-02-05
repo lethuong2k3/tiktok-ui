@@ -29,7 +29,7 @@ const Button = forwardRef(
     ref // Declare 'ref' as a parameter
   ) => {
     let Comp = 'button';
-    const classes = cx('wrapper', { primary, outline, outlineDefault, small, text, disabled, rounded, [className]: className });
+    const classes = cx('wrapper', { primary, outline, large,outlineDefault, small, text, disabled, rounded, [className]: className });
     const props = {
       onClick,
       ...passProps,
