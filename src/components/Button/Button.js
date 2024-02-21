@@ -26,10 +26,20 @@ const Button = forwardRef(
       onClick,
       ...passProps
     },
-    ref // Declare 'ref' as a parameter
+    ref, // Declare 'ref' as a parameter
   ) => {
     let Comp = 'button';
-    const classes = cx('wrapper', { primary, outline, large,outlineDefault, small, text, disabled, rounded, [className]: className });
+    const classes = cx('wrapper', {
+      primary,
+      outline,
+      large,
+      outlineDefault,
+      small,
+      text,
+      disabled,
+      rounded,
+      [className]: className,
+    });
     const props = {
       onClick,
       ...passProps,
@@ -58,7 +68,7 @@ const Button = forwardRef(
         {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
       </Comp>
     );
-  }
+  },
 );
 
 Button.propTypes = {
@@ -77,6 +87,6 @@ Button.propTypes = {
   rightIcon: PropTypes.node,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func,
-}
+};
 
 export default Button;

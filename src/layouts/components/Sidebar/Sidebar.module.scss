@@ -1,19 +1,24 @@
 .wrapper {
-    overflow-y: hidden;
-    scrollbar-gutter: stable both-edges;
-    &:hover {
-        overflow-y: overlay;
-    }
+  overflow: hidden;
+  top: 60px;
+  bottom: 0px;
+  width: 240px;
+  background: rgb(255, 255, 255);
+  position: fixed;
+  padding-right: 8px;
+  &:hover {
+    overflow-y: overlay;
+  }
 }
 
 .container {
-    width: 232px;
-    max-height: 660px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 0 26px 8px;
+  width: 232px;
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 26px 8px;
 }
 
 .icons-sidebar {
-    padding: 3px;
+  padding: 3px;
 }

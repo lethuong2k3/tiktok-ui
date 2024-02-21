@@ -2,7 +2,6 @@ import classNames from 'classnames/bind';
 
 import styles from './Footer.module.scss';
 import Button from '~/components/Button';
-import { CreateEffectIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
@@ -12,11 +11,10 @@ function Footer() {
       <div className={cx('wrapper')}>
         <Button
           href="https://effecthouse.tiktok.com/download?utm_campaign=ttweb_entrance_v1&utm_source=tiktok_webapp_main"
-          leftIcon={<CreateEffectIcon />}
           large
           className={cx('btn-footer')}
         >
-          Create effects
+        Create TikTok effects, get a reward
         </Button>
       </div>
       <div className={cx('container-link')}>
@@ -47,6 +45,8 @@ function Footer() {
         <a href="https://www.tiktok.com/creators/creator-portal/en-us/">Creator Portal</a>
         <a href="https://www.tiktok.com/community-guidelines?lang=en">Community Guidelines</a>
       </div>
+
+      <div className={cx('copyright')}>© leanhthuong2k3@gmail.com</div>
     </>
   );
 }

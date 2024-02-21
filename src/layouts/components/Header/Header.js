@@ -120,7 +120,7 @@ function Header() {
               <Button primary>Log in</Button>
             </>
           )}
-          <Menu items={login ? userMenu : MENU_ITEMS}>
+          <Menu offset={[6, 8]} placement="bottom-end" items={login ? userMenu : MENU_ITEMS}>
             {login ? (
               <Image
                 src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/7310048624166535211~c5_300x300.webp?lk3s=a5d48078&x-expires=1706749200&x-signature=IIcUsGHdGp9oef5pIIIQA69gd%2Bo%3D"

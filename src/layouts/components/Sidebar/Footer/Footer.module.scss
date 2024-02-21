@@ -19,16 +19,16 @@
   height: 52px;
   margin-top: 0px;
   margin-bottom: 30px;
-  font-size: 1.7rem;
-  font-weight: 500;
+  color: rgb(255, 245, 201);
+  font-size: 1.3rem;
+  padding-left: 50px;
+  line-height: 16px;
+  font-weight: 600;
   border-radius: 8px;
   background: no-repeat center url('/assets/images/background-btn.png');
   background-size: cover;
   user-select: none;
 
-  &:hover {
-    font-size: 1.8rem;
-  }
 }
 
 .container-link {
@@ -47,4 +47,16 @@
       text-decoration: underline;
     }
   }
+}
+
+.copyright {
+  color: rgba(22, 24, 35, 0.5);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  display: inline-block;
+  margin-right: 7px;
+  margin-top: 5px;
+  margin-top: 10px;
 }

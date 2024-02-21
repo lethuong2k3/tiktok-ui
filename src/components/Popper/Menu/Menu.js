@@ -10,7 +10,7 @@ import styles from './Menu.module.scss';
 
 const cx = classNames.bind(styles);
 
-function Menu({ children, items = [] }, hideOnClick = false) {
+function Menu({ children, placement, offset, zIndex, items = [] }, hideOnClick = false) {
   const [history, setHistory] = useState([{ data: items }]);
   const current = history[history.length - 1];
 
@@ -18,7 +18,8 @@ function Menu({ children, items = [] }, hideOnClick = false) {
     return current.data.map((item, index) => {
       const isParent = !!item.children;
       return (
-        <MenuItem data={item}
+        <MenuItem
+          data={item}
           key={index}
           onClick={() => {
             if (isParent) {
@@ -32,33 +33,29 @@ function Menu({ children, items = [] }, hideOnClick = false) {
 
   const handleBack = () => {
     setHistory((prev) => prev.slice(0, prev.length - 1));
-  }
+  };
 
   const renderResult = (attrs) => (
     <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
       <PopperWrapper className={cx('menu-poper')}>
-        {history.length > 1 && (
-          <Header
-            title={current.title}
-            onBack={handleBack}
-          />
-        )}
+        {history.length > 1 && <Header title={current.title} onBack={handleBack} />}
         <div className={cx('menu-body')}>{renderItems()}</div>
       </PopperWrapper>
     </div>
-  )
+  );
   // Reset to first page
-  const handleResetMenu = () => setHistory((prev) => prev.slice(0, 1))
+  const handleResetMenu = () => setHistory((prev) => prev.slice(0, 1));
 
   return (
     <Tippy
       interactive
-      placement="bottom-end"
+      placement={placement}
       delay={[0, 700]}
-      offset={[6, 8]}
+      offset={offset}
       hideOnClick={hideOnClick}
       render={renderResult}
       onHide={handleResetMenu}
+      zIndex={zIndex}
     >
       {children}
     </Tippy>
@@ -69,6 +66,6 @@ Menu.propTypes = {
   children: PropTypes.node.isRequired,
   items: PropTypes.array,
   hideOnClick: PropTypes.bool,
-}
+};
 
 export default Menu;

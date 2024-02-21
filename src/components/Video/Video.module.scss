@@ -1,0 +1,171 @@
+.wrapper {
+  margin: 0px auto;
+  width: 100%;
+  min-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px 0px;
+  position: relative;
+  max-width: 692px;
+  height: unset;
+  width: unset;
+  transition-property: margin;
+  margin-bottom: 0px;
+
+  .player-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    height: 100%;
+    margin: unset;
+  }
+
+  .video-card {
+    position: relative;
+    box-sizing: border-box;
+    background-size: cover;
+    cursor: pointer;
+    margin-right: 20px;
+
+    .video-border {
+      height: 600px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+  }
+
+  video {
+    width: 100%;
+    max-height: 600px;
+  }
+}
+
+.container-img {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.content {
+  margin-left: 12px;
+  width: 624px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-info-container {
+  margin-right: 114px;
+}
+
+.author-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.author-nickname {
+  font-weight: 400;
+  font-size: 14px;
+  display: inline-block;
+  line-height: 28px;
+}
+
+.btn-follow {
+  position: absolute;
+  top: 28px;
+  right: 0;
+}
+
+.container-text {
+  font-size: 16px;
+  line-height: 21px;
+  word-break: break-word;
+}
+
+.span-text {
+  display: inline;
+  font-weight: 400;
+}
+
+.tag {
+  font-weight: 600;
+  color: rgb(43, 93, 185);
+}
+
+.music-tag {
+  margin-bottom: 12px;
+
+  h4 {
+    line-height: 21px;
+    margin-top: 2px;
+    margin-left: 2px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .music-text {
+    margin-left: 5px;
+  }
+}
+
+.anchor-tag {
+  display: flex;
+  margin-left: -2px;
+  margin-bottom: 0px;
+  min-width: 0px;
+  height: 22px;
+
+  border-radius: 4px;
+  align-items: center;
+  color: rgb(22, 24, 35);
+  margin-top: 2px;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(22, 24, 35, 0.03);
+    padding: 1px 6px 1px 4px;
+  }
+
+  img {
+    width: 14px;
+    height: 14px;
+    object-fit: cover;
+  }
+
+  p {
+    font-size: 13px;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 8px;
+  }
+}
+
+.video-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+}
