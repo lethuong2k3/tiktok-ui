@@ -16,7 +16,6 @@ import {
 import classNames from 'classnames/bind';
 import styles from './Video.module.scss';
 import ButtonAction from '../ButtonAction/ButtonAction';
-import { useRef, useState } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -44,19 +43,7 @@ function VideoContent({ data }) {
     },
   ];
 
-  const [playing, setPlaying] = useState(false);
-  const videoRef = useRef(null);
   const [content, ...tags] = data.title.split(' #');
-
-  const onVideoPress = () => {
-    if (playing) {
-      videoRef.current.pause();
-      setPlaying(false);
-    } else {
-      videoRef.current.play();
-      setPlaying(true);
-    }
-  };
 
   return (
     <div className={cx('wrapper-item')}>
@@ -107,7 +94,7 @@ function VideoContent({ data }) {
         <div className={cx('player-wrapper')}>
           <div className={cx('video-card')}>
             <div className={cx('video-border')}>
-              <video onClick={onVideoPress} ref={videoRef} loop src={data.video}></video>
+              <video autoPlay controls loop src={data.video}></video>
             </div>
           </div>
           <div className={cx('action-item')}>
