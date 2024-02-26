@@ -1,11 +1,11 @@
 const routes = {
-    home: '/',
-    following: '/following',
-    profile: '/:nickname',
-    upload: '/upload',
-    friends: '/friends',
-    explore: '/explore',
-    live: '/live'
-}
+  home: '/tiktok-ui',
+  following: '/following',
+  profile: '/profile',
+  upload: '/upload',
+  friends: '/friends',
+  explore: '/explore',
+  live: '/live',
+};
 
-export default routes
+export default routes;
